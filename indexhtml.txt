@@ -1,0 +1,95 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feliz Aniversario</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #1a1a1a;
+      overflow: hidden;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+    }
+  h1 {
+      font-size: 2.5em;
+      margin-top: 20vh;
+      color: #ff4d4d;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      margin-top: 10px;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-top: 20px;
+      color: #ffd6d6;
+    }
+
+ .bubbles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .bubble {
+      position: absolute;
+      bottom: -100px;
+      width: 20px;
+      height: 20px;
+      background-color: rgba(255, 77, 77, 0.4);
+      border-radius: 50%;
+      animation: rise 10s infinite ease-in;
+    }
+
+    @keyframes rise {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) scale(0.5);
+        opacity: 0;
+      }
+ }
+
+    iframe {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>¡Feliz aniversario, amorcito!</h1>
+  <h2>2 meses juntos, I & K</h2>
+  <p>Gracias por hacerme tan feliz en tan poco tiempo.</p>
+
+  <div class="bubbles">
+    <!-- Generar varias burbujas -->
+    <script>
+      for (let i = 0; i < 40; i++) {
+        const bubble = document.createElement("div");
+        bubble.className = "bubble";
+        bubble.style.left = Math.random() * 100 + "vw";
+        bubble.style.animationDuration = (Math.random() * 5 + 5)
++ "s";
+        bubble.style.width = bubble.style.height = (Math.random() * 20 + 10) + "px";
+        document.querySelector(".bubbles").appendChild(bubble);
+      }
+    </script>
+  </div>
+
+  <!-- Música de fondo (YouTube oculto) -->
+  <iframe width="0" height="0" src="https://www.youtube.com/embed/VPRjCeoBqrI?autoplay=1&loop=1&playlist=VPRjCeoBqrI" allow="autoplay" frameborder="0"></iframe>
+</body>
+</html>
